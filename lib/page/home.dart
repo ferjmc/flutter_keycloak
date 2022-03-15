@@ -12,13 +12,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final String _clientId = 'backend-unversitario';
   static const String _issuer =
-      'https://auth.bitsports-dev.co/auth/realms/universitario';
+      'https://auth.bitsports-dev.co/realms/universitario';
   final List<String> _scopes = <String>[
     'openid',
     'email',
     'backend-universitario'
   ];
-  String logoutUrl = 'http://core.bitsports-dev.co/oauth/logout';
+  String logoutUrl = 'https://core.bitsports-dev.co/oauth/logout';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
