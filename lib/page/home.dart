@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   final String _clientId = 'backend-universitario';
   static const String _issuer =
       'https://auth.bitsports-dev.co/realms/universitario';
-  final List<String> _scopes = <String>['openid', 'email'];
+  final List<String> _scopes = <String>['openid', 'email', 'offline_access'];
   String logoutUrl = 'https://core.bitsports-dev.co/oauth/logout';
   @override
   Widget build(BuildContext context) {
@@ -51,15 +51,11 @@ class _HomePageState extends State<HomePage> {
       Uri uri, String clientId, List<String> scopes) async {
     // create the client
     var issuer = await Issuer.discover(uri);
-    var client = Client(issuer, clientId);
+    var client = Client(issuer, clientId, clientSecret: 'SECRET');
 
     // create a function to open a browser with an url
     urlLauncher(String url) async {
-      if (await canLaunch(url)) {
-        await launch(url, forceWebView: true, enableJavaScript: true);
-      } else {
-        throw 'Could not launch $url';
-      }
+      await launch(url, forceWebView: true);
     }
 
     // create an authenticator

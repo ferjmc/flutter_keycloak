@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bitsports.flutter_keycloak">
    <application
+        android:usesCleartextTraffic="true"
         android:label="flutter_keycloak"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
@@ -31,4 +32,22 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+<queries>
+    <!-- If your app opens https URLs -->
+    <intent>
+        <action android:name="android.intent.action.VIEW" />
+        <data android:scheme="https" />
+    </intent>
+    <!-- If your app makes calls -->
+    <intent>
+        <action android:name="android.intent.action.DIAL" />
+        <data android:scheme="tel" />
+    </intent>
+    <!-- If your app emails -->
+    <intent>
+        <action android:name="android.intent.action.SEND" />
+        <data android:mimeType="*/*" />
+    </intent>
+</queries>
 </manifest>
+
