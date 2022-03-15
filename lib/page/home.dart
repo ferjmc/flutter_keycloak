@@ -13,11 +13,7 @@ class _HomePageState extends State<HomePage> {
   final String _clientId = 'backend-universitario';
   static const String _issuer =
       'https://auth.bitsports-dev.co/realms/universitario';
-  final List<String> _scopes = <String>[
-    'openid',
-    'email',
-    'backend-universitario'
-  ];
+  final List<String> _scopes = <String>['openid', 'email'];
   String logoutUrl = 'https://core.bitsports-dev.co/oauth/logout';
   @override
   Widget build(BuildContext context) {
