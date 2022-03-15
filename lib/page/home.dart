@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String _clientId = 'backend-unversitario';
+  final String _clientId = 'backend-universitario';
   static const String _issuer =
       'https://auth.bitsports-dev.co/realms/universitario';
   final List<String> _scopes = <String>[
